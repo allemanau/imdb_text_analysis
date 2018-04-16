@@ -3,6 +3,7 @@ library(stringr)
 library(tidyverse)
 library(tidytext)
 
+# Do not uncomment unless you wish to reread the data from IMDB.
 # ct = 100   # top {ct} movies from each year
 # for (year in 1954:2017){
 #   url <- paste("http://www.imdb.com/search/title?count=",ct,"&release_date=",year,",",year,"&title_type=feature",sep="")
@@ -50,17 +51,17 @@ library(tidytext)
 # # save data
 # for (year in 1898:2017){
 #   write.csv(get(paste("imdb_",year,sep="")),
-#             paste("/Users/allemanau/Documents/Coursework/Data Projects/imdb_extracts/imdb_",year,".csv",sep=""))
+#             paste("imdb_",year,".csv",sep=""))
 #   write.csv(get(paste("full_synopsis_",year,sep="")),
-#             paste("/Users/allemanau/Documents/Coursework/Data Projects/imdb_extracts/full_synopsis_",year,".csv",sep=""))
+#             paste("full_synopsis_",year,".csv",sep=""))
 # }
 
 # read data
 for (year in 1898:2017){
   assign(paste0("imdb_",year,sep=""),
-         read_csv(paste0("/Users/allemanau/Documents/Coursework/Data Projects/imdb_extracts/imdb_",year,".csv",sep="")))
+         read_csv(paste0("imdb_",year,".csv",sep="")))
   assign(paste0("full_synopsis_",year,sep=""),
-         read_csv(paste0("/Users/allemanau/Documents/Coursework/Data Projects/imdb_extracts/full_synopsis_",year,".csv",sep="")))
+         read_csv(paste0("full_synopsis_",year,".csv",sep="")))
 }
 
 imdb_top_100_since_1898 <- imdb_1898
